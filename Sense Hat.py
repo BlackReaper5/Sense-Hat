@@ -1,1 +1,0 @@
-/home/pi/Sense Hat.py
