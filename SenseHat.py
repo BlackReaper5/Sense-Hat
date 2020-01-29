@@ -11,7 +11,7 @@ sense.clear()
 # Constants
 WRITE_API_KEY = "RVZQOKHCZL4IM94H"
 BASE_URL = "https://api.thingspeak.com/update"
-POST_DELAY_MINUTES = 10 # 10 minutes
+POST_DELAY_MINUTES = 10 * 60 # 10 minutes interval before uploading weather data
 
 
 # Data to send to ThingSpeak inclusive the write API key
@@ -46,7 +46,7 @@ R, W, W, W, W, W, W, R
 ]
 
 
-# The mark to show when the Sense Hat send data to ThingSpeak
+# The mark to show when the Sense Hat sends data to ThingSpeak
 O_MARK = [
 W, W, G, G, G, G, W, W,
 W, G, W, W, W, W, G, W,
@@ -59,6 +59,7 @@ W, W, G, G, G, G, W, W
 ]
 
 
+# The data to send to ThingSpeak
 temperature = 0
 humidity = 0
 pressure = 0
@@ -112,23 +113,29 @@ def upload_data(payload):
 
 try:
     while True:
+        # Get the new sensed data
         temperature = get_temperature()
         humidity = get_humidity()
         pressure = get_pressure()
 
+        # Update payload with newly sensed data
         payload.update({
             "field1": temperature,
             "field2": humidity,
             "field3": pressure})
         
+        # Upload newly sensed data
         upload_data(payload)
     
+        # Listen for joystick actions
         sense.stick.direction_middle = show_temperature
         sense.stick.direction_left = show_humidity
         sense.stick.direction_right = show_pressure
         
+        # Time-out before sending data to ThingSpeak again
         sleep(POST_DELAY_MINUTES)
 
 except KeyboardInterrupt:
+    # Show a red X mark when an exception happens, in this case when manually interrupting with the keyboard (CTRL-C)
     sense.set_pixels(X_MARK)
     
