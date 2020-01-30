@@ -1,9 +1,9 @@
 # Sense-Hat
-I made a simple Weather Station with a Sense Hat attached to a Raspberry Pi 3 B+.
+* I made a simple Weather Station with a Sense Hat attached to a Raspberry Pi 3 B+.
 
-But what is a Sense Hat?
+* But what is a Sense Hat?
 
-The [Raspberry Pi site](https://www.raspberrypi.org/products/sense-hat/) states the following ->
+* The [Raspberry Pi site](https://www.raspberrypi.org/products/sense-hat/) states the following ->
 
 > The Sense HAT is an add-on board for Raspberry Pi, made especially for the Astro Pi mission – it launched to the International Space Station in December 2015 – and is now available to buy.
 
@@ -16,17 +16,16 @@ The [Raspberry Pi site](https://www.raspberrypi.org/products/sense-hat/) states 
 > ### Barometric pressure
 > ### Humidity
 
-For this project I only used the **Temperature**, **Barometric** pressure and **Humidity** sensors.  
-Every 10 minutes the current **Temperature in degrees Celcius**, **Barometric pressure in Millibars** and the **percentage of relative Humidity** is uploaded to ThingSpeak. 
+_For this project I only used the **Temperature**, **Barometric pressure** and **Humidity** sensors_
 
-When that happens, a green circle is shown on the 8x8 LED's.  
-When the program terminates a red cross is shown.
+* Every 10 minutes the current **Temperature in degrees Celcius**, **Barometric pressure in Millibars** and the **percentage of relative Humidity** is uploaded to ThingSpeak
+* When data is uploaded to ThingSpeak a green circle is shown
+* Middle clicking on the joystick shows the last measured Temperature on the 8x8 LED's
+* Moving the joystick to the left shows the last measured Humidity
+* Moving the joystick to the right shows the last measured Barometric pressure
+* When the program terminates a red cross is shown
 
-Middle clicking on the joystick shows the last measured Temperature on the 8x8 LED's.  
-Moving the joystick to the left shows the last measured Humidity.  
-Moving the joystick to the right shows the last measured Barometric pressure.
-
-[ThingSpeak](https://thingspeak.com/channels/972879)
+[See uploaded data here at ThingSpeak](https://thingspeak.com/channels/972879)
 
 ### Raspberry Pi 3B+ with the Sense Hat attached to it
 <img src="images/RaspberryPiSenseHat.jpg" width="300">
