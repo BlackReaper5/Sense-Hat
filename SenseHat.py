@@ -1,8 +1,6 @@
 from sense_hat import SenseHat, ACTION_RELEASED
 from time import sleep
 import requests
-import sys
-
 
 sense = SenseHat()
 sense.clear()
@@ -60,9 +58,9 @@ W, W, G, G, G, G, W, W
 
 
 # The data to send to ThingSpeak
-temperature = 0
-humidity = 0
-pressure = 0
+temperature = 0 # Temperature in degrees Celcius
+humidity = 0 # Percentage of relative humidity
+pressure = 0 #  Barometric pressure in Millibars
 
 
 def format_data(data):
@@ -76,17 +74,17 @@ def is_action_released(event):
 
 
 def get_temperature():
-    """Returns the temperature in degrees Celcius"""
+    """Returns the temperature"""
     return format_data(sense.temperature)  
 
 
 def get_humidity():
-    """Returns the percentage of relative humidity"""
+    """Returns the humidity"""
     return format_data(sense.humidity)  
     
 
 def get_pressure():
-    """Returns the pressure in Millibars"""
+    """Returns the pressure"""
     return format_data(sense.pressure) 
 
 
