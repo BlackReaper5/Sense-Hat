@@ -3,7 +3,7 @@ I made a simple Weather Station with a Sense Hat attached to a Raspberry Pi 3 B+
 
 But what is a Sense Hat?
 
-The Raspberry Pi site states the following ->
+The [Raspberry Pi site](https://www.raspberrypi.org/products/sense-hat/) states the following ->
 
 > The Sense HAT is an add-on board for Raspberry Pi, made especially for the Astro Pi mission – it launched to the International Space Station in December 2015 – and is now available to buy.
 
@@ -19,7 +19,7 @@ The Raspberry Pi site states the following ->
 For this project I only used the **Temperature**, **Barometric** pressure and **Humidity** sensors.  
 Every 10 minutes the current **Temperature in degrees Celcius**, **Barometric pressure in Millibars** and the **percentage of relative Humidity** is uploaded to ThingSpeak. 
 
-When that happens, a green circle is shown on the 8x8 LED's.
+When that happens, a green circle is shown on the 8x8 LED's.  
 When the program terminates a red cross is shown.
 
 Middle clicking on the joystick shows the last measured Temperature on the 8x8 LED's.  
@@ -43,5 +43,3 @@ Moving the joystick to the right shows the last measured Barometric pressure.
 ### When the program is terminated
 <img src="images/Exception.jpg" width="300">
 
-
-[Raspberry Pi site regarding the Sense Hat](https://www.raspberrypi.org/products/sense-hat/)
